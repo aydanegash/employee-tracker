@@ -1,16 +1,17 @@
 const express = require('express');
 const inquirer = require('inquirer');
 const mysql = require('mysql');
+const console.table = require('console.table');
 
-// const PORT =  8080;
+
 
 const connection = mysql.createConnection({
     host: 'localhost',
-    port: 3306,
+    port: 8080,
     user: 'root',
   
     password: 'hello123',
-    // database: 'ice_creamDB',
+    database: 'employee_trackerDB',
   });
   
   connection.connect((err) => {
