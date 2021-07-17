@@ -29,10 +29,35 @@ const connection = mysql.createConnection(config.database);
             message: 'What would you like to do?',
             name: 'mainMenuOptions',
             choices: [
-                'View',
-                'Add',
-                'Remove Employee', 
-                'Update Employee Roles'
+              {
+                name: 'View employees',
+                value: 'View_Employees'
+              },
+              {
+                name: 'View roles',
+                value: 'View_Roles'
+              },
+              {
+                name: 'View deparments',
+                value: 'View_departments'
+              },
+              {
+                name: 'Add employee',
+                value: 'Add_employee'
+              },
+              {
+                name: 'Add role',
+                value: 'Add_role'
+              },
+              {
+                name: 'Add department',
+                value: 'Add_department'
+              },
+
+              {
+                name: 'Update employee role',
+                value: 'Update_employee_role'
+              }, 
             ], 
         },
     ])
