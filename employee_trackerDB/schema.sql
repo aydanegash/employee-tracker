@@ -5,14 +5,14 @@ USE employee_trackerDB;
 
 CREATE TABLE department (
 id INT PRIMARY KEY,
-name VARCHAR(30)
+name VARCHAR(30) UNIQUE NOT NULL
 );
 
 CREATE TABLE role (
 id INT PRIMARY KEY,
-role_title VARCHAR(30), 
-salary DECIMAL (10,2),
-department_id INT 
+role_title VARCHAR(30), UNIQUE NOT NULL
+salary DECIMAL (10,2), NOT NULL
+department_id INT NOT NULL
 ); 
 
 CREATE TABLE employee (

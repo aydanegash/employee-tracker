@@ -2,6 +2,7 @@ const express = require('express');
 const inquirer = require('inquirer');
 const mysql = require('mysql');
 const cTable = require('console.table');
+const util = require('util');
 
 const config = {
     database: {
@@ -64,85 +65,26 @@ const connection = mysql.createConnection(config.database);
     switch (choice) {
       case 'View_Employees':
         return ;
-      case 'View roles':
-        return viewEmployeesByDepartment();
-      case 'View deparments':
-        return viewEmployeesByManager();
-      case "ADD_EMPLOYEE":
-        return addEmployee();
-      case "REMOVE_EMPLOYEE":
-        return removeEmployee();
-      case "UPDATE_EMPLOYEE_ROLE":
-        return updateEmployeeRole();
-      case "UPDATE_EMPLOYEE_MANAGER":
-        return updateEmployeeManager();
-      case "VIEW_DEPARTMENTS":
-        return viewDepartments();
-      case "ADD_DEPARTMENT":
-        return addDepartment();
-      case "REMOVE_DEPARTMENT":
-        return removeDepartment();
-      case "VIEW_ROLES":
-        return viewRoles();
-      case "ADD_ROLE":
-        return addRole();
-      case "REMOVE_ROLE":
-        return removeRole();
+      case 'View_roles':
+        return ;
+      case 'View_deparments':
+        return ;
+      case 'View_deparments':
+        return ;
+      case 'Add_employee':
+        return ;
+      case 'Add_role':
+        return ;
+      case 'Add_department':
+        return ;
+      case 'Update_employee_role':
+        return ;
       default:
-        return quit();
+        return ;
     }
   }
-    .then((answer) => {
-        switch (answer.action) {
-          
-            case 'View':
-                viewoptions();
-                break; 
 
-            case 'Add':
-              addOptions();
-              break;
-    
-            case 'Remove Employee':
-              removeEmployee();
-              break;
-    
-            case 'Update Employee Roles':
-              updateEmployeeRole();
-              break;
-    
-            default:
-              console.log(`Invalid action: ${answer.action}`);
-              break;
-          }
-        });
-  };
+  
 
-  const viewoptions = () => {
-    inquirer
-    .prompt({
-        type: 'list',
-        message: 'What would you like to view?',
-        name: 'options',
-        choices: [ 'View Employees', 'View Roles', 'View Departments'],
-    })
-    .then((answer) => {
-        console.log(answer.choices);
-    });``
-  };
-
-  const addoptions = () => {
-    inquirer
-    .prompt({
-        type: 'list',
-        message: 'What would you like to view?',
-        name: 'options',
-        choices: [ 'Add Employees', 'Add Roles', 'Add Departments'],
-    })
-    .then((answer) => {
-        console.log('here are your emplyees');
-    });
-  };
- 
  
 
